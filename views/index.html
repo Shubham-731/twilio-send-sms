@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twilio SMS API</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container w-50 mx-auto my-3">
+      <h1>Twilio Send SMS</h1>
+
+      <form action="/send-sms" method="post">
+        <input
+          type="tel"
+          name="toNum"
+          id="to-number"
+          placeholder="Phone Number..."
+        />
+        <input
+          type="text"
+          name="msgBody"
+          id="msg-body"
+          placeholder="Message..."
+        />
+        <input type="submit" value="Send SMS" />
+      </form>
+
+      <div class="result my-3">
+        <h1>Result</h1>
+        <% if (message != undefined) { %>
+        <strong><%= message %> </strong>
+        <% } else { %>
+        <strong>Fill the above form to send the SMS!</strong>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
